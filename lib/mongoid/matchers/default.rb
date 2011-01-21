@@ -8,7 +8,6 @@ module Mongoid #:nodoc:
       end
       # Return true if the attribute and value are equal.
       def matches?(value)
-        debugger
         @attribute.is_a?(Array) && (value.is_a?(String) || value.is_a?(BSON::ObjectId)) ?
           @attribute.include?(value) : value === @attribute
       end

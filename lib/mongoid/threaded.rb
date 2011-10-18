@@ -309,6 +309,13 @@ module Mongoid #:nodoc:
     #
     # @since 2.1.0
     def identity_map
+      puts "********IMAP thread count #{Thread.list.count}"
+      puts Thread.current[:"[mongoid]:identity-map"].inspect
+      # require 'ruby-debug'
+      # $rewrewrwe ||= 0
+      # debugger if $rewrewrwe == 0
+      # $rewrewrwe = 1
+      puts "RAM USAGE: #{`ps -o rss= -p #{$$}`.to_f / 1000.0} MB"
       Thread.current[:"[mongoid]:identity-map"] ||= IdentityMap.new
     end
 

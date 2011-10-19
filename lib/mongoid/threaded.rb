@@ -315,8 +315,8 @@ module Mongoid #:nodoc:
       # $rewrewrwe ||= 0
       # debugger if $rewrewrwe == 0
       # $rewrewrwe = 1
-      puts caller(0)
-      puts "RAM USAGE: #{`ps -o rss= -p #{$$}`.to_f / 1000.0} MB"
+      # puts caller(0)
+      # puts "RAM USAGE: #{`ps -o rss= -p #{$$}`.to_f / 1000.0} MB"
       Thread.current[:"[mongoid]:identity-map"] ||= IdentityMap.new
     end
 
